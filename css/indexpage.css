@@ -1,0 +1,197 @@
+
+
+.fireworks {
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+  }
+
+body {
+    background-image: url("../pic/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    background-position: 0 0;
+}
+
+.avatar
+{
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+div
+{
+    position: absolute;
+    top: 30%;
+    left: 46%;
+    margin: 0 0 0 -200px;
+}
+
+p.sentence
+{
+    font-size:x-large;
+    color:violet;
+}
+
+p.aboutinfo
+{
+    font-size: large;
+    color: whitesmoke;
+    display: none;
+}
+
+p.master{
+    position: relative;
+    /* 文字大写 */
+    text-transform: uppercase;
+    color: #333333;
+    /* 1rem=16px */
+    font-size: xx-large;
+    opacity: 75%;
+}
+p.master::after{
+    content: 'Opynicus';
+    position: absolute;
+    top: 0;
+    left: 222px;
+    /* 文字透明色 */
+    color: transparent;
+    background-image: linear-gradient(to right,
+    #c23616,#192a56,#00d2d3,yellow,
+    #6d214f,#2e86de,#4cd137,#e84118);
+    /* 背景绘制区域 当值为text 的时候 代表设置了文字的镂空效果 但是前提必须是文字颜色为透明色 */
+    background-clip: text;
+    /* 谷歌浏览器的私有属性 */
+    -webkit-background-clip: text;
+    /* 利用裁切来创建元素的可显示区域 circle表示创建了圆形 100px表示圆形的直径,0%和50%表示圆形的圆心 圆形的直径和圆形的圆心利用at关键字隔开 */
+    clip-path: circle(100px at 0% 50%);
+    /* 动画  名称 时长 infinite 表示无限次播放 */
+    animation: move 5s infinite;
+}
+/* 下面设置圆形移动效果 */
+@keyframes move{
+    0%{
+        clip-path: circle(100px at 0% 50%);
+    }
+    50%{
+        clip-path: circle(100px at 100% 50%);
+    }
+    100%{
+        clip-path: circle(100px at 0% 50%);
+    }
+}
+
+button {
+    /* 相对定位 */
+    position: relative;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+    /* 圆角属性 */
+    border-radius: 50px;
+    /* 背景渐变色 */
+    background-image: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
+    /* 背景渐变色大小 */
+    background-size: 400%;
+    z-index: 1;
+}
+
+/* 下面设计 发光效果 */
+button::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    border-radius: 50px;
+    /* 背景渐变色 */
+    background-image: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #09a8f4);
+    /* 背景渐变色大小 */
+    background-size: 400%;
+    /* 元素的位置 底层或者顶层  -值表示底层 + 值表示顶层 */
+    z-index: -1;
+    /* 设置模糊度 显示发光效果 */
+    filter: blur(20px);
+}
+
+button:hover {
+    /* 动画 名称 时间 infinite 是无限次播放 */
+    animation: sun 8s infinite;
+}
+
+button:hover::before {
+    animation: sun 8s infinite;
+}
+
+@keyframes sun {
+    100% {
+        /* 背景位置 */
+        background-position: -400% 0;
+    }
+}
+  
+  /* .clock{
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top: 10px solid #e74c3c;
+    position: relative;
+    animation: a1 2s linear infinite;
+    left: 200px;
+    top: 160px;
+  }
+  
+  .clock::before,.clock::after{
+    content: '';
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
+  
+  .clock::before{
+    border-top: 10px solid #e67e22;
+    transform: rotate(120deg);
+  }
+  
+  .clock::after{
+    border-top: 10px solid #3498db;
+    transform: rotate(240deg);
+  }
+  
+  .clock span{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    text-align: center;
+    line-height: 200px;
+    animation: a2 2s linear infinite;
+  }
+  
+  @keyframes a1 {
+    to{
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes a2 {
+    to{
+      transform: rotate(-360deg);
+    }
+  } */
+  
