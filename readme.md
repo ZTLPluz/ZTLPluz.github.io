@@ -1,1 +1,1 @@
-IndexPage
+Just IndexPage
