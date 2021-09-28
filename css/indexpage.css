@@ -35,7 +35,7 @@ div
 {
     position: absolute;
     top: 20%;
-    left: 46%;
+    left: 44%;
     margin: 0 0 0 -200px;
 }
 
@@ -147,7 +147,41 @@ button:hover::before {
         background-position: -400% 0;
     }
 }
-  
+
+.star {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0.2;
+        border: 2px solid transparent;
+        border-bottom: 4px solid #fff;
+        animation: blink 2s infinite linear;
+      }
+.star::before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: 4px;
+        border: 2px solid transparent;
+        border-top: 4px solid #fff;
+      }
+@keyframes blink {
+        20% {
+          opacity: 0.2;
+        }
+        40% {
+          opacity: 0.5;
+        }
+        60% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
   /* .clock{
     width: 200px;
     height: 200px;
