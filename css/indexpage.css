@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
+
+#clock{
+  color: #fff;
+  font-size: x-large;
+  font-family: 'Share Tech Mono';
+  text-shadow: 0 0 20px #0AAFE6, 0 2px 0 #DAF6FF;
+}
 
 .fireworks {
     left: 0;
@@ -26,7 +34,7 @@ body {
 div
 {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 46%;
     margin: 0 0 0 -200px;
 }
