@@ -32,26 +32,42 @@ body {
     width: 100px;
     height: 100px;
 }
-
 div
 {
     position: absolute;
-    top: 20%;
-    left: 44%;
+    top: 7%;
+    left: 33%;
     margin: 0 0 0 -200px;
+    width: 1000px;
+    height: 600px;
 }
 
+p.intro
+{
+    font-size:large;
+    color:greenyellow;
+    text-shadow: 0 0 10px cyan,0 1px 0 gold;
+}
 p.sentence
 {
     font-size:x-large;
     color:violet;
+    text-shadow: 0 0 20px pink,0 2px 0 blueviolet;
 }
 
 p.aboutinfo
 {
     font-size: large;
-    color: whitesmoke;
+    color: black;
     display: none;
+    text-shadow: 0 0 10px cyan,0 1px 0 grey;
+}
+.music_player
+{
+  position: absolute;
+  top: 600px;
+  left: 347px;
+  display: none;
 }
 
 p.master{
@@ -67,7 +83,7 @@ p.master::after{
     content: 'Opynicus';
     position: absolute;
     top: 0;
-    left: 222px;
+    left: 417px;
     /* 文字透明色 */
     color: transparent;
     background-image: linear-gradient(to right,

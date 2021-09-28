@@ -4,6 +4,12 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+  $(".music").click(function(){
+      $("#music_player").toggle();
+  });
+});
+
 function myTime(){
     const time = new Date();
     const hh = time.getHours();
@@ -29,7 +35,7 @@ function myTime(){
         txt1="已经傍晚了，现在是";
         txt2="看看远处的夕阳吧";
    }
-   else if(hh>=19&&hh<24)
+   else if(hh>=18&&hh<24)
    {
         txt1="晚上好，现在是";
         txt2="把时间留给自己";
@@ -138,7 +144,7 @@ function myTime(){
     }
     setTimeout("playRains()", 2);
   }
-  var rainCount = 20;
+  var rainCount = 25;
   var rains = new Array();
   init();
   starInit();
@@ -149,3 +155,66 @@ function myTime(){
     rains.push(rain);
   }
   playRains();
+
+  fetch('https://v1.hitokoto.cn')
+  .then(response => response.json())
+  .then(data => {
+    const hitokoto = document.getElementById('hitokoto_text')
+    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+    hitokoto.innerText = data.hitokoto
+  })
+  .catch(console.error)
+
+  $(document).ready(function(){
+    autoPlayMusic();
+    audioAutoPlay();
+});
+
+function openmusic(){
+  autoPlayMusic();
+    audioAutoPlay();
+    $(".close_music_div").css({"display":"block"});
+$(".open_music_div").css({"display":"none"});
+}
+
+function pauseAuto(){
+  var audio = document.getElementById('bg-music');
+audio.pause();
+$(".close_music_div").css({"display":"none"});
+$(".open_music_div").css({"display":"block"});
+}
+
+function audioAutoPlay() {
+    var audio = document.getElementById('bg-music');
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        audio.play();
+    }, false);
+}
+// 音乐播放
+function autoPlayMusic() {
+    // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+    function musicInBrowserHandler() {
+        musicPlay(true);
+        document.body.removeEventListener('touchstart', musicInBrowserHandler);
+    }
+    document.body.addEventListener('touchstart', musicInBrowserHandler);
+    // 自动播放音乐效果，解决微信自动播放问题
+    function musicInWeixinHandler() {
+        musicPlay(true);
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            musicPlay(true);
+        }, false);
+        document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+    }
+    document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+}
+function musicPlay(isPlay) {
+    var media = document.querySelector('#bg-music');
+    if (isPlay && media.paused) {
+        media.play();
+    }
+    if (!isPlay && !media.paused) {
+        media.pause();
+    }
+}
