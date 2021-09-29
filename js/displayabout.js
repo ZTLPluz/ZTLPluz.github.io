@@ -10,6 +10,41 @@ $(document).ready(function(){
   });
 });
 
+
+function cheat()
+{
+  document.getElementById("cheat").innerText="这里没有好康的";
+}
+function normal()
+{
+  document.getElementById("cheat").innerText="别点我";
+}
+function NGGYU()
+{
+  var flag=confirm("不要看了，没什么好看的，点击\"取消\"按钮就好");
+  if (flag==true)
+  {
+      var flag1=confirm("我让你点击\"取消\"！！！");
+      if (flag1==true)
+      {
+          var flag2=confirm("这是欧美专区的❤,小孩子不要看，快取消啊");
+          if (flag2==true)
+      {
+          var flag3=confirm("小孩子看了把持不住的❤，最后再问一次，是否要看？");
+          if (flag3==true)
+          {
+              $("#cheaton").show();
+          }
+      }
+      }
+  }
+}
+
+function disappear()
+{
+  $("#cheaton").hide();
+  alert("恭喜你解锁成就👏：RickRoll")
+}
 function myTime(){
     const time = new Date();
     const hh = time.getHours();
@@ -33,16 +68,16 @@ function myTime(){
    else if(hh>=17&&hh<18)
    {
         txt1="已经傍晚了，现在是";
-        txt2="看看远处的夕阳吧";
+        txt2="看看远处的夕阳吧,人间忽晚，山河已秋";
    }
    else if(hh>=18&&hh<24)
    {
         txt1="晚上好，现在是";
-        txt2="把时间留给自己";
+        txt2="黑夜一无所有，为何给我安慰";
    }
    else
    {
-        txt1="晚上好，现在是";
+        txt1="已经是深夜了，现在是";
         txt2="注意身体，少熬夜吧";
    }
     document.getElementById('clock').innerText =txt1 +'\n'+ Math.floor(hh / 10) + (hh % 10 + ':') + Math.floor(mm / 10) + mm % 10 + ':' + Math.floor(ss / 10) + ss % 10 + '\n' + txt2;
