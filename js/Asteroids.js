@@ -1,4 +1,4 @@
-//http://www.websiteasteroids.com 原网址 自改 侵删
+//http://www.websiteasteroids.com
 function registerEventListener() {
     function Asteroids() {
 		if (!window.ASTEROIDS) window.ASTEROIDS = {
@@ -751,4 +751,5 @@ function registerEventListener() {
 		script.src = "https://erkie.github.com/excanvas.js";
 		document.getElementsByTagName("head")[0].appendChild(script);
 	} else window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
+
 }

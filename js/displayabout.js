@@ -10,7 +10,11 @@ $(document).ready(function(){
   });
 });
 
-
+$(document).ready(function(){
+  $(".game").click(function(){
+      $("#gamerule").show();
+  });
+});
 function cheat()
 {
   document.getElementById("cheat").innerText="这里没有好康的";
