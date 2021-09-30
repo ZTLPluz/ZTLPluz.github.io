@@ -89,7 +89,7 @@ function myTime(){
   myTime();
   setInterval(myTime, 1000);
 
-  var starCount = 300;
+  var starCount = 200;
   var context;
   function starInit() {
     var bg = document.querySelector("body");
@@ -183,7 +183,7 @@ function myTime(){
     }
     setTimeout("playRains()", 2);
   }
-  var rainCount = 25;
+  var rainCount = 20;
   var rains = new Array();
   init();
   starInit();
