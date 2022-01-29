@@ -1,13 +1,12 @@
+console.log("如果你愿意的话，本页面有两个小成就待你完成，它们分别是："
++'\n'+"1，玩小游戏达到1500分"
++'\n'+"2，点击“别点我”按钮并触发结局"
+)
+
 $(document).ready(function(){
     $(".about").click(function(){
         $("#aboutinfo").toggle();
     });
-});
-
-$(document).ready(function(){
-  $(".music").click(function(){
-      $("#music_player").toggle();
-  });
 });
 
 $(document).ready(function(){
@@ -31,14 +30,10 @@ function NGGYU()
       var flag1=confirm("我让你点击\"取消\"！！！");
       if (flag1==true)
       {
-          var flag2=confirm("这是欧美专区的❤,小孩子不要看，快取消啊");
+          var flag2=confirm("最后再问一次，是否要看？");
           if (flag2==true)
       {
-          var flag3=confirm("小孩子看了把持不住的❤，最后再问一次，是否要看？");
-          if (flag3==true)
-          {
-              $("#cheaton").show();
-          }
+        $("#cheaton").show();
       }
       }
   }
@@ -204,56 +199,4 @@ function myTime(){
   })
   .catch(console.error)
 
-  $(document).ready(function(){
-    autoPlayMusic();
-    audioAutoPlay();
-});
 
-function openmusic(){
-  autoPlayMusic();
-    audioAutoPlay();
-    $(".close_music_div").css({"display":"block"});
-$(".open_music_div").css({"display":"none"});
-}
-
-function pauseAuto(){
-  var audio = document.getElementById('bg-music');
-audio.pause();
-$(".close_music_div").css({"display":"none"});
-$(".open_music_div").css({"display":"block"});
-}
-
-function audioAutoPlay() {
-    var audio = document.getElementById('bg-music');
-    audio.play();
-    document.addEventListener("WeixinJSBridgeReady", function () {
-        audio.play();
-    }, false);
-}
-// 音乐播放
-function autoPlayMusic() {
-    // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-    function musicInBrowserHandler() {
-        musicPlay(true);
-        document.body.removeEventListener('touchstart', musicInBrowserHandler);
-    }
-    document.body.addEventListener('touchstart', musicInBrowserHandler);
-    // 自动播放音乐效果，解决微信自动播放问题
-    function musicInWeixinHandler() {
-        musicPlay(true);
-        document.addEventListener("WeixinJSBridgeReady", function () {
-            musicPlay(true);
-        }, false);
-        document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-    }
-    document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-}
-function musicPlay(isPlay) {
-    var media = document.querySelector('#bg-music');
-    if (isPlay && media.paused) {
-        media.play();
-    }
-    if (!isPlay && !media.paused) {
-        media.pause();
-    }
-}

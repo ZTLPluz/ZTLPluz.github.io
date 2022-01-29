@@ -346,6 +346,7 @@ function registerEventListener() {
 
 		function setScore() {
 			that.points.innerHTML = window.ASTEROIDS.enemiesKilled * 10;
+			if (that.points.innerHTML == 1500) alert("恭喜你解锁成就👏：U are so boring")
 		};
 
 		function hasOnlyTextualChildren(element) {

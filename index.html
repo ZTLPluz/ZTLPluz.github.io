@@ -17,21 +17,18 @@
             <button class="about">关于</button>
             <button onclick="window.location.href = 'http://opynicus.com/Opynicus.github.io'">博客</button>
             <button class="game" onclick="registerEventListener()">小游戏</button>
-            <button class="music">听音乐</button>
             <button id="cheat" onmouseover="cheat()" onmouseout="normal()" onclick="NGGYU()">别点我</button>
-            <p id="aboutinfo" class="aboutinfo">大三CS在读的不知名学生，兴趣是玩游戏，魔怔乐子人😅<br>更多信息请去<strong><a href="http://opynicus.com/Opynicus.github.io">我的博客</a></strong>观看</p>
+            <p id="aboutinfo" class="aboutinfo">大三CS在读的不知名学生，兴趣是玩游戏，魔怔乐子人😅<br>更多信息请去<strong><a href="http://opynicus.com/Opynicus.github.io">我的博客</a></strong>观看<br>对了，为什么你不打开控制台看看呢？
+            </p>
             <br>
-            <audio id="music_player" class="music_player" autoplay="autoplay" controls="controls" hidden loop="loop" preload="auto" src="music/Florence + The Machine - Stand By Me.mp3">
-                你的浏览器版本太低，不支持audio标签
-                  </audio>
                   <br><br>
                   <p id="cheaton" class="cheaton">❗欧👉美🍀大🔥片🔐:<a href="https://www.bilibili.com/video/BV1GJ411x7h7?from=search&seid=7071505742553857204&spm_id_from=333.337.0.0" onclick="disappear()">www.ph673.com</a></p> 
         </div>
         <div class="gamerule" id="gamerule">
-                <p class="intro">按下WASD以控制战机，空格键射击，esc键退出</p>
+                <p class="intro">按下WASD以控制战机，空格键射击，esc键退出，按下b键以获得提示</p>
         </div>
         <canvas id="Meteor"></canvas>
-        <script src="js/jquery-3.6.0.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
         <script src="js/anime.js"></script>
         <script src="js/fireworks.js"></script>
         <script src="js/displayabout.js"></script>
